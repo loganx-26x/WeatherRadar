@@ -2,7 +2,7 @@
 
 ## Overview
 
-This Django-based web application serves as a comprehensive weather data aggregator, analyzer, and trend visualizer. It fetches real-time weather data from public APIs, stores it in a database, and provides users with insightful analysis and visualizations of weather trends over time.
+This Django-based web application serves as a comprehensive weather data aggregator, analyzer, and trend visualizer. It fetches real-time weather data from public APIs, and provides users with insightful analysis and visualizations of weather trends over time.
 
 ## Features
 

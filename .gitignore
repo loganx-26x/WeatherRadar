@@ -1,0 +1,5 @@
+.venv/
+weather_project/weather_project/.env
+weather_project/weather_project/__pycache__/
+weather_project/weather/__pycache__/
+weather_project/weather/migrations/__pycache__

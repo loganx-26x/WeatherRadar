@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Data Analysis for {{ location }}</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-gray-100 font-sans">
+    <div class="container mx-auto px-4 py-8">
+      <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+        <div class="bg-blue-600 text-white p-6">
+          <h1 class="text-3xl font-bold">Weather Data Analysis</h1>
+          <p class="text-xl mt-2">{{ location }}</p>
+        </div>
+        <div class="p-6">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+            <div class="bg-gray-50 p-4 rounded-lg shadow">
+              <h2 class="text-xl font-semibold text-gray-700 mb-2">
+                Average Temperature
+              </h2>
+              <p class="text-3xl font-bold text-blue-600">{{ avg_temp }}°C</p>
+            </div>
+            <div class="bg-gray-50 p-4 rounded-lg shadow">
+              <h2 class="text-xl font-semibold text-gray-700 mb-2">
+                Average Humidity
+              </h2>
+              <p class="text-3xl font-bold text-blue-600">
+                {{ avg_humidity }}%
+              </p>
+            </div>
+          </div>
+          <div class="mt-8">
+            <h2 class="text-2xl font-bold text-gray-700 mb-4">
+              Weather Trends Graph
+            </h2>
+            <div class="flex justify-center">
+              <img
+                src="data:image/png;base64,{{ graph }}"
+                alt="Weather Trends Graph"
+                class="w-3/4 md:w-1/2 rounded-lg shadow-lg"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WeatherRadar</title>
+    {% load static %}
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      .bg-image {
+        background-image: url('{% static "beautiful-city-sky.jpg" %}');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+    </style>
+  </head>
+  <body class="bg-image min-h-screen flex items-center justify-center p-4">
+    <div
+      class="bg-white bg-opacity-80 p-8 rounded-lg shadow-lg max-w-md w-full"
+    >
+      <h1 class="text-3xl font-bold text-gray-800 mb-6 text-center">
+        WeatherRadar
+      </h1>
+      <form id="locationForm" method="POST" class="space-y-4">
+        {% csrf_token %}
+        <div class="relative">
+          <input
+            type="text"
+            id="locationInput"
+            name="location"
+            placeholder="Enter your location"
+            required
+            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+        </div>
+        <button
+          type="submit"
+          class="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition duration-300 ease-in-out"
+        >
+          Get Weather
+        </button>
+      </form>
+    </div>
+    <script>
+      document
+        .getElementById("locationForm")
+        .addEventListener("submit", function (e) {
+          const button = this.querySelector('button[type="submit"]');
+          button.disabled = true;
+          button.innerHTML = "Searching...";
+        });
+    </script>
+  </body>
+</html>

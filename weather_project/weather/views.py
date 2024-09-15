@@ -62,14 +62,15 @@ def fetch_weather_data(request):
             temperatures = [data.temperature for data in weather_data]
             humidities = [data.humidity for data in weather_data]
 
-            _, ax = plt.subplots(2, 1, figsize=(10, 8))
-
+            # Plotting temperature
+            _, ax = plt.subplots(1, 2, figsize=(16, 8))
             ax[0].plot(timestamps, temperatures, label="Temperature (°C)")
             ax[0].set_title(f"Temperature for {location}")
             ax[0].set_xlabel("Time")
             ax[0].set_ylabel("Temperature (°C)")
             ax[0].legend()
 
+            # plotting humidity
             ax[1].plot(timestamps, humidities, label="Humidity (%)", color="green")
             ax[1].set_title(f"Humidity for {location}")
             ax[1].set_xlabel("Time")

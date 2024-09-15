@@ -95,6 +95,6 @@ def fetch_weather_data(request):
             return render(request, "weather_analyzer.html", context)
 
         else:
-            raise "Error fetching data. Please try again"
+            return render(request, "error.html")
 
     return render(request, "info_data.html")
